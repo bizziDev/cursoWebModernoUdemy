@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #03</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <form name="pesquisa" action="http://www.google.com.br/search">
+        <!-- name q e name hl são parametros que a consulta do google aceita -->
+        <input type="text" name="q" placeholder="Digite o termo...">
+        <select name="hl">
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+    <script>
+        // formas de buscar um formulario - htmlColection
+            console.log(document.forms)
+
+        //atraves de um array
+            console.log(document.forms[0])
+
+        //atraves de um nodeList pesquisando pela nome//
+            console.log(document.getElementsByName('pesquisa'))
+                //byTagName tras um htmlColection
+            console.log(document.getElementsByTagName('form')) 
+
+        //procurando elemento pelo nome(pesquisa), trazendo o forms
+             console.log(document.pesquisa)
+
+        //acessando por names
+             console.log(document.getElementsByName('q'))
+             console.log(document.getElementsByName('hl'))
+
+        //alterando o valor do input
+            document.pesquisa.q.value = "linux"
+
+        //alterando valor do select na tag option
+            document.pesquisa.hl.value = "en-us"
+       //acesssando atributo pelo index sem o value
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+
+    <div>
+        <p>Fim</p>
+    </div>
+
+    <script>
+        function log () {
+            console.log(this)
+        }
+        HTMLAllCollection.prototype.log = log
+        // Adiciona a função `log` ao protótipo do objeto `HTMLAllCollection`. Este objeto representa uma coleção de todos os elementos HTML em um documento
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+         lista.parentNode() //retorna o pai
+          lista.childNodes() //retorna o filho
+
+          const primeiro = lista.firstChild //acessando primeiro elemeto
+          primeiro.log()
+          //proximo elememto depois do primeiro
+          primeiro.nextSibling.log()
+
+          const ultimo = lista.lastChild //acessando o ultimo elemento
+          ultimo.log()
+          //elemento anterior
+          ultimo.previousSibling.log()
+
+
+          lista.children.log() //retorna filhos de um no. em htmlColection sem os textos(li)
+          lista.firstElementChild.log() //retorna de fato o primeiro elemento(a primeira tag definida)
+          lista.lastElementChild.log()// retorna o ultimo elemento(ultima tag definida)
+
+          
+    
+    </script>
+</body>
+
+</html>
